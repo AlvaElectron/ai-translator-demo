@@ -1,4 +1,4 @@
-// AI-translator 体験版: Pyodide（ブラウザの中の Python）で通訳機の画面のプログラムを動かし、できた絵を canvas に写す。
+// AI-Translator 体験版: Pyodide（ブラウザの中の Python）で通訳機の画面のプログラムを動かし、できた絵を canvas に写す。
 // Python 側の入り口は web/entry.py（start / tap / key / step）。
 (async () => {
   const canvas = document.getElementById("screen");

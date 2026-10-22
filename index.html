@@ -3,13 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI-translator 体験版</title>
+<title>AI-Translator 体験版</title>
 <style>
   :root { color-scheme: dark; --bg: #0f1218; --panel: #1a1f29; --text: #e8ebf0; --sub: #9aa4b2; --accent: #3a86d8; }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--text); font-family: system-ui, "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif; line-height: 1.6; }
   main { max-width: 860px; margin: 0 auto; padding: 16px; }
   h1 { font-size: 1.25rem; margin: 8px 0 4px; }
+  .brand { display: flex; align-items: center; gap: 14px; margin: 4px 0 8px; }
+  .brand img { height: 72px; width: auto; background: #fff; border-radius: 10px; padding: 6px; }
   p { margin: 4px 0; color: var(--sub); font-size: .92rem; }
   #stage { position: relative; width: 100%; max-width: 800px; margin: 12px auto; aspect-ratio: 800 / 480; background: #000; border: 6px solid #2a303c; border-radius: 14px; overflow: hidden; }
   canvas { display: block; width: 100%; height: 100%; touch-action: manipulation; outline: none; cursor: pointer; }
@@ -25,10 +27,13 @@
 </head>
 <body>
 <main>
-  <h1>AI-translator 体験版</h1>
+  <div class="brand">
+    <img src="logo.png" alt="ALVA ELECTRON（アルヴァエレクトロン）" width="85" height="72">
+    <h1>AI-Translator 体験版</h1>
+  </div>
   <p>お店の通訳機の画面を、ブラウザで操作できます。画面をクリック（スマートフォンではタップ）してください。</p>
   <div id="stage">
-    <canvas id="screen" width="800" height="480" tabindex="0" aria-label="AI-translator の画面"></canvas>
+    <canvas id="screen" width="800" height="480" tabindex="0" aria-label="AI-Translator の画面"></canvas>
     <div id="status">読み込んでいます…</div>
   </div>
   <p>これは体験版です。音声の認識・翻訳・読み上げは動かず、決まった例文が出ます。</p>
@@ -53,11 +58,12 @@
       <tr><th>一般の番号</th><td><code>1234</code>　「店舗用」「音の設定」「電源・再起動」を開くとき</td></tr>
       <tr><th>管理者の番号</th><td><code>3957</code>　「電源・再起動」→ 右上の「管理者」を押し、5 秒以内に画面の左上の角を押す → この番号</td></tr>
     </table>
-    <p>実際の店舗用の番号ではありません。管理者の画面の「暗証番号」のタブで、変える操作も試せます（ページを開き直すと元に戻ります）。</p>
+    <p>実際の店舗用の番号ではありません。管理者の画面の「暗証番号」のタブで、変える操作も試せます（ページを開き直すと元に戻ります）。管理者の画面の「利用状況」のタブでは、日ごとの翻訳・訂正・定型文の数（言語別）と、最高温度のグラフを、見本のデータで見られます。</p>
   </details>
 </main>
 <script>window.PYODIDE_BASE = "./pyodide/";</script>
 <script src="./pyodide/pyodide.js"></script>
 <script src="app.js"></script>
+<script data-goatcounter="https://ai-translator-demo.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
