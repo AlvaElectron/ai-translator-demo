@@ -28,7 +28,7 @@
 <body>
 <main>
   <div class="brand">
-    <img src="logo.png" alt="ALVA ELECTRON（アルヴァエレクトロン）" width="85" height="72">
+    <img src="logo.png" alt="ALVA ELECTRON（アルヴァエレクトロン）" width="63" height="72">
     <h1>AI-Translator『コトリア』 Web 操作確認版</h1>
   </div>
   <p>お店の通訳機の画面を、ブラウザで操作できます。画面をクリック（スマートフォンではタップ）してください。</p>
@@ -61,9 +61,8 @@
     <p>実際の店舗用の番号ではありません。管理者の画面の「暗証番号」のタブで、変える操作も試せます（ページを開き直すと元に戻ります）。管理者の画面の「利用状況」のタブでは、日ごとの翻訳・訂正・定型文の数（言語別）と、最高温度のグラフを、見本のデータで見られます。</p>
   </details>
 </main>
-<script>window.PYODIDE_BASE = "./pyodide/";</script>
-<script src="./pyodide/pyodide.js"></script>
+<script>window.PYODIDE_BASE = "__PYODIDE_BASE__";</script>
+<script src="__PYODIDE_BASE__pyodide.js"></script>
 <script src="app.js"></script>
-<script data-goatcounter="https://ai-translator-demo.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
