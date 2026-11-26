@@ -4,7 +4,7 @@
   const canvas = document.getElementById("screen");
   const ctx = canvas.getContext("2d");
   const status = document.getElementById("status");
-  const WIDTH = 800, HEIGHT = 480, FRAME_MS = 33;
+  const WIDTH = 819, HEIGHT = 480, FRAME_MS = 33;
 
   let stage = "";
   const started = Date.now();
@@ -56,7 +56,7 @@
     pyodide.runPython('import sys\nsys.path.insert(0, "/app")\nimport web_entry\nweb_entry.start()');
     const entry = pyodide.pyimport("web_entry");
 
-    // 画面の絵（Python が RGBA の 800 x 480 を返す）を canvas に写す
+    // 画面の絵（Python が RGBA の 819 x 480 を返す）を canvas に写す
     const image = ctx.createImageData(WIDTH, HEIGHT);
     let busy = false;
     const draw = () => {
@@ -78,7 +78,7 @@
       window.setTimeout(draw, FRAME_MS);
     };
 
-    // クリック・タッチ → 画面の座標（0〜800 x 0〜480）にして渡す
+    // クリック・タッチ → 画面の座標（0〜819 x 0〜480）にして渡す
     canvas.addEventListener("pointerdown", (event) => {
       event.preventDefault();
       canvas.focus();
